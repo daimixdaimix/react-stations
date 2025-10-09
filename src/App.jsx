@@ -4,7 +4,7 @@ import './App.css'
 import { useState } from 'react';
 
 const App = () => {
-  const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/collie-border/n02106166_1539.jpg');
+  const [dogUrl] = useState('https://images.dog.ceo/breeds/collie-border/n02106166_1539.jpg');
 
   return (
     <>
@@ -19,6 +19,6 @@ const App = () => {
   )
 }
 
-export default App;
+export { App };  // 名前付きexport
 
 // 参考: Reactコンポーネントの基本構造
