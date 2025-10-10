@@ -2,6 +2,8 @@
 
 import './App.css'
 import { useState } from 'react';
+import Header from './Header';
+import Description from './Description';
 
 const App = () => {
   const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/collie-border/n02106166_1539.jpg');
@@ -15,14 +17,8 @@ const App = () => {
 
   return (
     <>
-      <header className="header-style">
-        <h1>犬のアプリ</h1>
-      </header>
-      <div>
-        <p className="dog-text">ここに犬の画像を表示します。</p>
-        <img src={dogUrl} alt='犬の画像' />
-        <button onClick={fetchRandomDogImage}>犬の画像を変更</button>
-      </div>
+      <Header />
+      <Description dogUrl={dogUrl} setDogUrl={setDogUrl} /> {/* Descriptionコンポーネントを追加 */}
     </>
   )
 }
