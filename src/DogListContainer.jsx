@@ -1,10 +1,11 @@
 // @ts-check
 
 import React, { useState, useEffect} from 'react';
+import BreedsSelect from './BreedsSelect';
 
 export const DogListContainer = () => {
   const [breeds, setBreeds] = useState([]);
-
+  const [selectedBreed, setSelectedBreed] = useState(''); // ここに新しい state を追加するよ
   useEffect(() => {
     fetch('https://dog.ceo/api/breeds/list/all')
       .then((response) => response.json())
@@ -15,11 +16,18 @@ export const DogListContainer = () => {
   }, []); // 空配列で初回マウント時のみ実行
 
   return (
-    <ul>
-      {breeds.map((breed) => (
-        <li key={breed}>{breed}</li>
-      ))}
-    </ul>
+    <>
+      <BreedsSelect 
+        breeds={breeds} 
+        selectedBreed={selectedBreed}  // ←これと
+        onBreedChange={setSelectedBreed}  // ←これが足りてない！
+      />
+      <ul>
+        {breeds.map((breed) => (
+          <li key={breed}>{breed}</li>
+        ))}
+      </ul>
+    </>
   );
 }
 

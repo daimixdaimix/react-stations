@@ -1,11 +1,12 @@
 // @ts-check
 
+// propsでbreedsを受け取るよ
+
 export const BreedsSelect = (props) => {
   const { breeds } = props;
   return (
-    <select>
-      <option value="">Select a breed</option>
-      
+    <select onChange={(e) => props.onBreedChange(e.target.value)} value={props.selectedBreed}>
+      <option value="select">Select a breed</option>
       {
       /* ここにoptionタグをmapで生成 */
       breeds.map((breed) => (
