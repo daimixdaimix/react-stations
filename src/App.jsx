@@ -4,6 +4,7 @@ import './App.css'
 import { useState } from 'react';
 import Header from './Header';
 import Description from './Description';
+import DogListContainer from './DogListContainer';
 
 const App = () => {
   const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/collie-border/n02106166_1539.jpg');
@@ -19,6 +20,7 @@ const App = () => {
     <>
       <Header />
       <Description dogUrl={dogUrl} setDogUrl={setDogUrl} /> {/* Descriptionコンポーネントを追加 */}
+      <DogListContainer />
     </>
   )
 }
