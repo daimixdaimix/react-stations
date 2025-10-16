@@ -5,3 +5,18 @@
     font-size: 18px;
     color: #333;
 }
+.dog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+}
+
+.dog-list-item {
+  list-style: none;
+}
+.dog-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
